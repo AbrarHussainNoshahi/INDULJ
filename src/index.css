@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@config "../tailwind.config.js";
+@import "./font.css";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/effect-coverflow";
+@import "leaflet/dist/leaflet.css";
+@tailwind utilities;
+
+:root{
+  --red-700: #FF4D4D;
+}
+/* .swiper-slide{
+  width: 503px;
+}
+.deals-swiper .swiper-slide-active{
+  width: 540px !important;
+}
+.deals-swiper{
+  perspective: 250px;
+} */
+ .deals-swiper .swiper-pagination-bullet-active {
+  background-color: #FF4D4D; /* danger/red */
+}
+
+.deals-pagination{
+  text-align: center;
+  padding: 20px 0;
+}
+.deals-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #ddd;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.deals-pagination .swiper-pagination-bullet-active {
+  background: #FF4D4D;
+}
+
+.custom-input input{
+  border-radius: 4px;
+  border: none !important;
+  /* border: 1px solid #B8BBBE; */
+  height: 39px;
+
+}
+.custom-input input:focus, textarea:focus{
+  /* border: 1px solid #B8BBBE; */
+  outline: none;
+  --tw-ring-color: transparent;
+}
+
+.custom-select select{
+  border-radius: 4px;
+  border: 1px solid #B8BBBE;
+  height: 39px;
+}
+.custom-select select:focus{
+  border: 1px solid #B8BBBE;
+  outline: none;
+  --tw-ring-color: transparent;
+}
+
+@media (max-width: 640px) {
+  .deals-nav-btn {
+    /* display: none; */
+  }
+  /* .deals-swiper .swiper-slide-active {
+    width: 100% !important;
+  } 
+  .swiper-slide{
+    width: 100%;
+  } */
+}

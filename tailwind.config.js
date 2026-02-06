@@ -1,0 +1,27 @@
+/** @type {import('tailwindcss').Config} */
+import flowbitePlugin from "flowbite/plugin";
+
+export default {
+  darkMode: "class",
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js",
+  ],
+  plugins: [flowbitePlugin],
+  theme: {
+    fontFamily: {
+      sans: ["Satoshi", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        danger: "#FF4D4D",
+        success: "#26AE60",
+        dark: "#252525",
+        black: "#000000",
+        warning: '#FFCF23',
+        primary: '#1387C7'
+      },
+    },
+  },
+};
