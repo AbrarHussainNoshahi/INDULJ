@@ -6,7 +6,7 @@ import {
   ToggleSwitch,
 } from "flowbite-react";
 import { useState } from "react";
-import Button from "./Button";
+import Button from "../components/ui/Button";
 import toast from "react-hot-toast";
 
 export default function SubmitDealForm({ setOpenModal }) {
@@ -148,10 +148,10 @@ export default function SubmitDealForm({ setOpenModal }) {
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t flex justify-end gap-4 bg-gray-50 rounded-b-lg">
+        <div className="px-6 py-4 border-t border-[#a5a6a7] flex justify-end gap-4 bg-gray-50 rounded-b-lg">
           <Button
             onClick={() => setOpenModal(false)}
-            variant="danger"
+            vabriant="danger"
             className="w-[120px]"
             size="sm"
           >

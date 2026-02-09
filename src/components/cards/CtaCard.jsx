@@ -11,7 +11,7 @@ export default function CtaCard({
 
   return (
     <div
-      className={`rounded-2xl p-10 flex flex-col justify-between items-center text-center shadow-xl
+      className={`rounded-2xl p-10 flex flex-col mb-8 justify-between items-center text-center shadow-xl
         bg-white      `}
     >
       <div>

@@ -1,10 +1,11 @@
-import { useState } from "react";
 import CtaCard from "../cards/CtaCard";
-import { Modal, ModalBody, ModalHeader } from "flowbite-react";
-import SubmitDealForm from "../ui/SubmitDealForm";
+import SubmitDealForm from "../../features/SubmitDealForm";
+import { useModal } from "../../hooks/useModal";
+import { ModalBody } from "flowbite-react";
 
 export default function CtaSection() {
-  const [openModal, setOpenModal] = useState(false);
+  const {Modal, setIsOpen} = useModal();
+  
   return (
     <section className=" bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
@@ -14,7 +15,7 @@ export default function CtaSection() {
             description="Know about a great deal? Let us know!"
             buttonText="Submit a Deal"
             variant="dark"
-            onClick={() => setOpenModal(true)}
+            onClick={() => setIsOpen(true)}
           />
 
           <CtaCard
@@ -25,9 +26,10 @@ export default function CtaSection() {
           />
         </div>
       </div>
-      <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
+
+      <Modal size='4xl'>
         <ModalBody>
-          <SubmitDealForm setOpenModal={setOpenModal}/>
+          <SubmitDealForm setOpenModal={setIsOpen}/>
         </ModalBody>
       </Modal>
     </section>

@@ -75,7 +75,7 @@ function HotDeals() {
   ];
   return (
     <PageContainer className="py-3">
-      <h2 className="py-2 my-4 text-center font-bold text-2xl">
+      <h2 className="py-2 my-4 text-dark text-center font-bold text-2xl lg:text-3xl">
         Top Picks / Hot Deals
       </h2>
       <div className="deals-nav flex justify-between">
@@ -224,7 +224,7 @@ function HotDeals() {
           loop
           keyboard={{ enabled: true }}
           mousewheel={{ thresholdDelta: 70 }}
-          modules={[Navigation, EffectCoverflow]}
+          modules={[Navigation, EffectCoverflow, Pagination]}
         >
           {deals.map((deal) => (
             <SwiperSlide key={deal.id}>

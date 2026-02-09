@@ -11,8 +11,8 @@ import './SearchInput.css';
 function SearchInput({ icon, placeholder, buttonTxt }) {
   return (
     <div className="flex items-center">
-      <TextInput icon={icon} type="text" placeholder={placeholder} className="w-56 custom-input" />
-      <Button size="sm" variant="danger" className='focus:ring-0! h-10 z-10 -ml-2.5' >{buttonTxt}</Button>
+      <TextInput icon={icon} type="text" placeholder={placeholder} className="w-56 custom-input custom-search" />
+      <Button size="sm" variant="danger" className='focus:ring-0! h-10! z-10 -ml-2.5' >{buttonTxt}</Button>
     </div>
   );
 }

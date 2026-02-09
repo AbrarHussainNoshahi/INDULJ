@@ -18,6 +18,7 @@ export default {
         danger: "#FF4D4D",
         success: "#26AE60",
         dark: "#252525",
+        darktext: '#2e2e2e',
         black: "#000000",
         warning: '#FFCF23',
         primary: '#1387C7'

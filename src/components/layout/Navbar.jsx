@@ -7,26 +7,34 @@ import {
   Drawer,
   DrawerHeader,
   DrawerItems,
+  ModalBody,
   Sidebar,
   SidebarItem,
   SidebarItemGroup,
   SidebarItems,
 } from "flowbite-react";
-import CartButton from "../ui/CartButton";
+import { useModal } from "../../hooks/useModal";
+import SubmitDealForm from "../../features/SubmitDealForm";
+import { NavLink } from "react-router-dom";
 
-const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Submit a Deal", href: "#" },
-  { label: "Plan Happy Hour", href: "#" },
-  { label: "Map", href: "#" },
-  { label: "How It Works", href: "#" },
-  { label: "About Us", href: "#" },
-];
-
-const Navbar = () => {
+const Navbar = ({ className = "", icon }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { Modal, setIsOpen: isSubmitModal } = useModal();
+
+  function openSubmit() {
+    isSubmitModal(true);
+  }
+
+  const navLinks = [
+    { label: "Home", to: "/home" },
+    { label: "Submit a Deal", to: "", onClick: openSubmit },
+    { label: "Plan Happy Hour", to: "/plan-happy-hour" },
+    { label: "Map", to: "/map" },
+    { label: "How It Works" },
+    { label: "About Us" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +44,6 @@ const Navbar = () => {
         setScrolled(false);
       }
     };
-    console.log(scrolled)
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -46,7 +53,7 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 z-30 w-full transition-all duration-300 ${!scrolled ? "backdrop-blur-md bg-black/20" : "bg-black backdrop-blur-0"}`}
+        className={`fixed top-0 left-0 z-30 w-full transition-all duration-300 ${!scrolled ? "backdrop-blur-md bg-black/50" : "bg-black backdrop-blur-0"} ${className}`}
       >
         <PageContainer>
           <div className="flex h-20 items-center justify-between">
@@ -60,15 +67,68 @@ const Navbar = () => {
               style={{ color: "white" }}
               className="hidden lg:flex items-center gap-8 text-sm text-white"
             >
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="transition text-gray-50 hover:text-primary"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {/* {navLinks.map((link) => {
+                if (link.to) {
+                  return (
+                    <NavLink
+                      key={link.label}
+                      to={link.to}
+                    >
+                      {link.label}
+                    </NavLink>
+                  );
+                }
+
+                if (link.action) {
+                  return (
+                    <button
+                      key={link.label}
+                      onClick={link.action}
+                      className="text-white/90 hover:text-white transition"
+                    >
+                      {link.label}
+                    </button>
+                  );
+                }
+
+                return (
+                  <span
+                    key={link.label}
+                    className="text-white/60 cursor-not-allowed"
+                  >
+                    {link.label}
+                  </span>
+                );
+              })} */}
+              {navLinks.map((link) => {
+                if (link.onClick) {
+                  return (
+                    <button
+                      key={link.label}
+                      onClick={link.onClick}
+                      className="text-white/90 hover:text-white transition cursor-pointer"
+                    >
+                      {link.label}
+                    </button>
+                  );
+                }
+
+                if (link.to) {
+                  return (
+                    <NavLink key={link.label} to={link.to}>
+                      {link.label}
+                    </NavLink>
+                  );
+                }
+                return (
+                  <span
+                    key={link.label}
+                    className="text-white/60 cursor-not-allowed"
+                  >
+                    {link.label}
+                  </span>
+                );
+              })}
             </nav>
 
             {/* Desktop Icons */}
@@ -122,7 +182,7 @@ const Navbar = () => {
               <ButtonIcon border={true}>
                 <FiUser />
               </ButtonIcon>
-              <CartButton count={1} />
+              {icon}
             </div>
 
             {/* Mobile Menu Button */}
@@ -171,6 +231,11 @@ const Navbar = () => {
           </Sidebar>
         </DrawerItems>
       </Drawer>
+      <Modal size="4xl">
+        <ModalBody>
+          <SubmitDealForm setOpenModal={isSubmitModal} />
+        </ModalBody>
+      </Modal>
     </>
   );
 };

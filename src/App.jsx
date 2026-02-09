@@ -1,13 +1,25 @@
 import { Toaster } from "react-hot-toast";
-import ImageSlider from "./components/layout/ImageSlider";
-import SwiperCarousel from "./components/layout/SwiperCarousel";
-import SubmitDealForm from "./components/ui/SubmitDealForm";
 import Home from "./pages/Home";
+import PlanHappyHour from "./pages/PlanHappyHour";
+import Map from "./pages/Map";
+import DailyDeals from "./pages/DailyDeals";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-    <Home />
+      {/* <Navbar /> */}
+    <BrowserRouter basename="/INDULJ">
+
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/daily-deals" element={<DailyDeals />} />
+        <Route path="/map" element={<Map />} />
+        <Route path="/plan-happy-hour" element={<PlanHappyHour />} />
+
+      </Routes>
+    </BrowserRouter>
     <Toaster
         position="top-center"
         gutter={12}
@@ -33,9 +45,6 @@ function App() {
         }}
       />
     </>
-    // <SubmitDealForm />
-    // <SwiperCarousel />
-    // <ImageSlider />
   );
 }
 

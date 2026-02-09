@@ -14,13 +14,13 @@ function DealCard({ deal, isActive }) {
     lg:h-[20rem]
     md:h-[16rem]
     sm:h-[14rem]
-    p-3 sm:p-4"
+    p-2 sm:p-2 md:p-3"
       style={{
         backgroundImage: `url(${deal.image})`,
       }}
     >
       {/* Dark overlay only when active */}
-      {isActive && <div className="absolute inset-0 bg-black/30 rounded-2xl" />}
+      {<div className="absolute inset-0 bg-black/30 rounded-2xl" />}
 
       {/* Content only visible on active slide */}
       {isActive && (
@@ -39,19 +39,25 @@ function DealCard({ deal, isActive }) {
                   <Tag key={i} text={tag} />
                 ))}
               </div>
-              <div className="price text-[8px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-medium text-white">
+              <div className="price text-[8px] min-[400px]:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px] font-medium text-white">
                 ${deal.price}
               </div>
             </div>
 
             <div className="flex py-2 items-center justify-between">
               <div className="text-white">
-                <h3 className="lg:text-[16px] text-[8px] md:text-[14px] font-bold">
+                <h3 className="lg:text-[16px] text-[7px] min-[400px]:text-[9px] sm:text-[12px] md:text-[12px] font-bold">
                   {deal.title}
                 </h3>
-                <p className="lg:text-[14px] text-[7px] md:text-[12px]">{deal.subtitle}</p>
+                <p className="lg:text-[14px] text-[6px] min-[400px]:text-[8px] sm:text-[11px]] md:text-[11px]">
+                  {deal.subtitle}
+                </p>
               </div>
-              <Button size="sm" variant="danger">
+              <Button
+                size="sm"
+                variant="danger"
+                className="lg:h-8! md:px-3 lg:px-4! rounded-sm min-[560px]:h-6! min-[560px]:text-[8px] text-[5px] md:text-[12px] sm:text-[10px] px-2! sm:h-6! text-nowrap h-4! md:h-8!"
+              >
                 View Deal
               </Button>
             </div>

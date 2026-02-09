@@ -1,6 +1,9 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
-import { hotDealIcon, regularDealIcon } from "../../utils/leafletIcon";
+import { hotDealIcon, regularDealIcon, regularDealIcon2 } from "../../utils/leafletIcon";
+import redIcon from "./../../utils/hot-deal-map.svg";
+import greenIcon from "./../../utils/regular-deal-map2.svg";
+
 
 // L.Marker.prototype.options.icon = DefaultIcon;
 
@@ -30,7 +33,7 @@ const deals = [
 
 
 
-const DealMap = () => {
+const DealMap = ({fromPage=false}) => {
   return (
     <MapContainer
       center={[30.2672, -97.7431]}
@@ -49,7 +52,7 @@ const DealMap = () => {
         <Marker
           key={deal.id}
           position={deal.position}
-          icon={deal.isHot ? hotDealIcon : regularDealIcon}
+          icon={deal.isHot ? hotDealIcon : (fromPage ? regularDealIcon2 : regularDealIcon)}
         >
           <Popup>
             <div className="text-sm">
@@ -65,6 +68,16 @@ const DealMap = () => {
           </Popup>
         </Marker>
       ))}
+      <div className="w-[184px] h-[106px] flex flex-col items-center justify-around bg-white shadow absolute bottom-2 right-2 z-1000 rounded-2xl p-5">
+        <div className="flex gap-3 text-[#434343] text-[16px] font-bold w-full">
+          <img src={redIcon} alt="hot-deal-icon" className="w-4 mr-2" />
+          Hot Deal
+        </div>
+        <div className="flex gap-3 text-[#434343] text-[16px] font-bold w-full">
+          <img src={greenIcon} alt="hot-deal-icon" className="w-4 mr-2" />
+          Regular Deal
+        </div>
+      </div>
     </MapContainer>
   );
 };
