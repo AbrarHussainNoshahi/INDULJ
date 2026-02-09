@@ -205,7 +205,7 @@ const Navbar = ({ className = "", icon }) => {
             </>
           )}
         />
-        <DrawerItems>
+        {/* <DrawerItems>
           <Sidebar
             aria-label="Sidebar with multi-level dropdown example"
             className="[&>div]:bg-transparent [&>div]:p-0"
@@ -224,6 +224,64 @@ const Navbar = ({ className = "", icon }) => {
                         {link.label}
                       </SidebarItem>
                     ))}
+                  </SidebarItemGroup>
+                </SidebarItems>
+              </div>
+            </div>
+          </Sidebar>
+        </DrawerItems> */}
+        <DrawerItems>
+          <Sidebar
+            aria-label="Sidebar with multi-level dropdown example"
+            className="[&>div]:bg-transparent [&>div]:p-0"
+          >
+            <div className="flex h-full flex-col justify-between py-2">
+              <div>
+                <SidebarItems>
+                  <SidebarItemGroup className="border-0">
+                    {navLinks.map((link) => {
+                      // If the link has onClick (like open modal)
+                      if (link.onClick) {
+                        return (
+                          <SidebarItem
+                            key={link.label}
+                            className="py-3 text-white cursor-pointer"
+                            icon={link.icon}
+                            onClick={() => {
+                              link.onClick();
+                              setIsOpen(false); // close drawer after click
+                            }}
+                          >
+                            {link.label}
+                          </SidebarItem>
+                        );
+                      }
+
+                      // If the link has a 'to' path
+                      if (link.to) {
+                        return (
+                          <NavLink
+                            key={link.label}
+                            to={link.to}
+                            className="block py-3 text-white"
+                            onClick={() => setIsOpen(false)} // close drawer
+                          >
+                            <SidebarItem icon={link.icon} className="py-3 hover:bg-white/10 text-white">
+                              {link.label}
+                            </SidebarItem>
+                          </NavLink>
+                        );
+                      }
+
+                      return (
+                        <SidebarItem
+                          key={link.label}
+                          className="py-3 text-white/60 cursor-not-allowed"
+                        >
+                          {link.label}
+                        </SidebarItem>
+                      );
+                    })}
                   </SidebarItemGroup>
                 </SidebarItems>
               </div>
