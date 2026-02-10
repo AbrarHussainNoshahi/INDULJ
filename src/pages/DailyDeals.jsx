@@ -52,7 +52,7 @@ function DailyDeals() {
             </ButtonIcon>
           </div>
         </div>
-        <div className="mt-5 mb-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mt-5 mb-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {dailyDeals.map((deal) => (
             <DailyDealItem deal={deal} key={deal.id} />
           ))}
