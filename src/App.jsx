@@ -12,8 +12,7 @@ function App() {
     <BrowserRouter basename="/INDULJ">
 
       <Routes>
-        <Route path="/" element={<Navigate to="/home" replace />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/daily-deals" element={<DailyDeals />} />
         <Route path="/map" element={<Map />} />
         <Route path="/plan-happy-hour" element={<PlanHappyHour />} />

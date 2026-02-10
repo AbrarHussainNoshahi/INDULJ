@@ -3,6 +3,7 @@ import DailyDealsModal from "./DailyDealsModal";
 
 export default function DailyDealItem({ deal }) {
   const { Modal, open, close, setIsOpen } = useModal();
+  const dealImage = `${import.meta.env.BASE_URL}${deal.image}`
   function onConfirm() {
     close();
   }
@@ -14,7 +15,7 @@ export default function DailyDealItem({ deal }) {
         onClick={open}
       >
         <img
-          src={deal.image}
+          src={dealImage}
           alt={deal.title}
           className="h-16 w-16 rounded-lg object-cover"
         />

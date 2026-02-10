@@ -9,6 +9,8 @@ import {
 import Button from "./Button";
 
 function DailyDealsModal({ onConfirm, deal, setIsOpen }) {
+  const dealImage = `${import.meta.env.BASE_URL}${deal.image}`
+
   return (
     <>
       <ModalHeader className="[&_h3]:font-bold">Deal Detail</ModalHeader>
@@ -16,7 +18,7 @@ function DailyDealsModal({ onConfirm, deal, setIsOpen }) {
         <div>
           <div className="w-full h-[272px] overflow-hidden rounded-lg">
             <img
-              src="deal-1.svg"
+              src={dealImage}
               alt=""
               className="w-full h-full object-cover object-center"
             />

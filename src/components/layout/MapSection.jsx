@@ -14,7 +14,7 @@ function MapSection() {
           className="relative h-[420px] overflow-hidden bg-gray-100"
         >
           {inView ? (
-            <DealMap />
+            <DealMap fromPage={false} />
           ) : (
             <div className="flex h-full items-center justify-center text-muted">
               Loading map…

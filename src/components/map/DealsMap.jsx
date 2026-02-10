@@ -68,7 +68,7 @@ const DealMap = ({fromPage=false}) => {
           </Popup>
         </Marker>
       ))}
-      <div className="w-[184px] h-[106px] flex flex-col items-center justify-around bg-white shadow absolute bottom-2 right-2 z-1000 rounded-2xl p-5">
+      {fromPage && <div className="w-[184px] h-[106px] flex flex-col items-center justify-around bg-white shadow absolute bottom-2 right-2 z-1000 rounded-2xl p-5">
         <div className="flex gap-3 text-[#434343] text-[16px] font-bold w-full">
           <img src={redIcon} alt="hot-deal-icon" className="w-4 mr-2" />
           Hot Deal
@@ -77,7 +77,7 @@ const DealMap = ({fromPage=false}) => {
           <img src={greenIcon} alt="hot-deal-icon" className="w-4 mr-2" />
           Regular Deal
         </div>
-      </div>
+      </div>}
     </MapContainer>
   );
 };

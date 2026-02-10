@@ -28,7 +28,7 @@ const Navbar = ({ className = "", icon }) => {
   }
 
   const navLinks = [
-    { label: "Home", to: "/home" },
+    { label: "Home", to: "/" },
     { label: "Submit a Deal", to: "", onClick: openSubmit },
     { label: "Plan Happy Hour", to: "/plan-happy-hour" },
     { label: "Map", to: "/map" },
@@ -59,7 +59,7 @@ const Navbar = ({ className = "", icon }) => {
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
             <div className="text-xl font-bold text-white">
-              <img src="logo.svg" className="h-7" alt="Flowbite Logo" />
+              <img src={`${import.meta.env.BASE_URL}logo.svg`} className="h-7" alt="Flowbite Logo" />
             </div>
 
             {/* Desktop Nav */}

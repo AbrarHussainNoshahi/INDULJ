@@ -6,6 +6,8 @@ import Button from "../ui/Button";
 function DealCard({ deal, isActive }) {
   const [isFavourite, setIsFavourite] = useState(false);
 
+  const dealImage = `${import.meta.env.BASE_URL}${deal.image}`
+
   return (
     <div
       className=" relative w-full rounded-2xl bg-center bg-cover bg-no-repeat
@@ -16,7 +18,7 @@ function DealCard({ deal, isActive }) {
     sm:h-[14rem]
     p-2 sm:p-2 md:p-3"
       style={{
-        backgroundImage: `url(${deal.image})`,
+        backgroundImage: `url(${dealImage})`,
       }}
     >
       {/* Dark overlay only when active */}

@@ -3,11 +3,12 @@ import Pill from "../ui/Pill";
 import PageContainer from "./PageContainer";
 
 const Hero = ({image, title, subtitle, showButtons, className=''}) => {
+  const bgImage = `${import.meta.env.BASE_URL}${image}`
   return (
     <section
       className={`relative lg:min-h-[570px] min-h-142 bg-cover lg:bg-center bg-right bg-no-repeat ${className}`}
       style={{
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${bgImage})`,
       }}
     >
       {/* overlay */}
