@@ -2,17 +2,17 @@ import { useModal } from "../../hooks/useModal";
 import DailyDealsModal from "./DailyDealsModal";
 
 export default function DailyDealItem({ deal }) {
-  const { Modal, open, close, setIsOpen } = useModal();
+  // const { Modal, open, close, setIsOpen } = useModal();
   const dealImage = `${import.meta.env.BASE_URL}${deal.image}`
-  function onConfirm() {
-    close();
-  }
+  // function onConfirm() {
+  //   close();
+  // }
 
   return (
     <>
       <div
-        className="rounded-xl w-full h-25 flex items-center shadow justify-center px-3 gap-2 sm:gap-3 md:gap-4 cursor-pointer"
-        onClick={open}
+        className="rounded-xl w-full h-25 flex items-center shadow justify-center px-3 gap-2 sm:gap-3 md:gap-4"
+        // onClick={open}
       >
         <img
           src={dealImage}
@@ -44,9 +44,9 @@ export default function DailyDealItem({ deal }) {
           </p>
         </div>
       </div>
-      <Modal size='3xl'>
+      {/* <Modal size='3xl'>
         <DailyDealsModal deal={deal} onConfirm={onConfirm} setIsOpen={setIsOpen}/>
-      </Modal>
+      </Modal> */}
     </>
   );
 }
