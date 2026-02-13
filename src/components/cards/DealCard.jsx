@@ -41,24 +41,24 @@ function DealCard({ deal, isActive }) {
                   <Tag key={i} text={tag} />
                 ))}
               </div>
-              <div className="price text-[8px] min-[400px]:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px] font-medium text-white">
+              <div className="price fluid-sm md:fluid-base xl:fluid-lg font-medium text-white">
                 ${deal.price}
               </div>
             </div>
 
             <div className="flex py-2 items-center justify-between">
               <div className="text-white">
-                <h3 className="lg:text-[16px] text-[7px] min-[400px]:text-[9px] sm:text-[12px] md:text-[12px] font-bold">
+                <h3 className="fluid-xs sm:fluid-sm md:fluid-base xl:fluid-lg font-bold">
                   {deal.title}
                 </h3>
-                <p className="lg:text-[14px] text-[6px] min-[400px]:text-[8px] sm:text-[11px]] md:text-[11px]">
+                <p className="fluid-xs sm:fluid-sm md:fluid-base ">
                   {deal.subtitle}
                 </p>
               </div>
               <Button
                 size="sm"
                 variant="danger"
-                className="lg:h-8! md:px-3 lg:px-4! rounded-sm min-[560px]:h-6! min-[560px]:text-[8px] text-[5px] md:text-[12px] sm:text-[10px] px-2! sm:h-6! text-nowrap h-4! md:h-8!"
+                className="lg:h-8! md:px-3 lg:px-4! rounded-sm min-[560px]:h-6! fluid-sm px-2! sm:h-6! text-nowrap h-6! md:h-8!"
               >
                 View Deal
               </Button>

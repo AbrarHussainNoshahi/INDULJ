@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       <PageContainer>
-        <Navbar icon={<CartButton count={1} />} />
+        <Navbar icon={<CartButton count={0} />} />
       </PageContainer>
       <Hero
         image="hero-food.svg"

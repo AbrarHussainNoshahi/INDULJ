@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import flowbitePlugin from "flowbite/plugin";
+import fluidTypography from "tailwind-fluid-typography";
 
 export default {
   darkMode: "class",
@@ -8,7 +9,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/flowbite/**/*.js",
   ],
-  plugins: [flowbitePlugin],
+  plugins: [flowbitePlugin, fluidTypography],
   theme: {
     fontFamily: {
       sans: ["Satoshi", "sans-serif"],

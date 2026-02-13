@@ -75,7 +75,7 @@ function HotDeals() {
   ];
   return (
     <PageContainer className="py-3">
-      <h2 className="py-2 my-4 text-dark text-center font-bold text-2xl lg:text-3xl">
+      <h2 className="py-2 my-4 lg:my-5 text-dark text-center font-bold fluid-xl lg:fluid-2xl">
         Top Picks / Hot Deals
       </h2>
       <div className="deals-nav flex justify-between">

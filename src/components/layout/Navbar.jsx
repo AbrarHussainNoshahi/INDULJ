@@ -65,7 +65,7 @@ const Navbar = ({ className = "", icon }) => {
             {/* Desktop Nav */}
             <nav
               style={{ color: "white" }}
-              className="hidden lg:flex items-center gap-8 text-sm text-white"
+              className="hidden lg:flex items-center gap-8 xl:fluid-base fluid-sm text-white"
             >
               {/* {navLinks.map((link) => {
                 if (link.to) {

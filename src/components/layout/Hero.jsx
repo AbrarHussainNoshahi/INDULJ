@@ -19,11 +19,11 @@ const Hero = ({image, title, subtitle, showButtons, className=''}) => {
           <div className="max-w-2xl text-white">
             <Pill>Eat Smart, Save Smart</Pill>
 
-            <h1 className="lg:mt-6 mt-4 text-3xl md:text-5xl font-bold leading-tight lg:text-5xl">
+            <h1 className="lg:mt-6 mt-4 text-3xl fluid-2xl lg:fluid-3xl font-bold leading-tight">
               {title}
             </h1>
 
-            <p className="mt-4 text-[18px] text-gray-200">
+            <p className="mt-4 fluid-base xl:fluid-lg text-gray-200">
               {subtitle}
             </p>
 

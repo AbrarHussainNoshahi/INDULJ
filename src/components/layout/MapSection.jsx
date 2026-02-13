@@ -8,7 +8,7 @@ function MapSection() {
   return (
     <section className="py-3 bg-white">
       <PageContainer>
-        <h2 className="py-2 my-4 font-bold text-2xl lg:text-3xl text-dark">Find Your Deals</h2>
+        <h2 className="py-2 my-4 font-bold fluid-xl lg:fluid-2xl text-dark">Find Your Deals</h2>
         <div
           ref={ref}
           className="relative h-[420px] overflow-hidden bg-gray-100"

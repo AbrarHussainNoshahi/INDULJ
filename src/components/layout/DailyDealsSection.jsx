@@ -35,7 +35,7 @@ export default function DailyDealsSection({ deals = dailyDeals }) {
     <section className=" py-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex md:flex-row items-center md:justify-between flex-col sm:justify-center mb-8">
-          <h2 className="text-3xl font-bold text-dark mb-2 lg:mb-0">
+          <h2 className="fluid-xl lg:fluid-2xl font-bold text-dark mb-2 lg:mb-0">
             Daily Deals List
           </h2>
           <SearchInput
