@@ -32,8 +32,8 @@ export default function DailyDealsSection({ deals = dailyDeals }) {
   }, [swiperInstance]);
 
   return (
-    <section className=" py-10 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className=" py-10">
+      <div className="max-w-350 mx-auto px-4">
         <div className="flex md:flex-row items-center md:justify-between flex-col sm:justify-center mb-8">
           <h2 className="fluid-xl lg:fluid-2xl font-bold text-dark mb-2 lg:mb-0">
             Daily Deals List
@@ -158,7 +158,7 @@ export default function DailyDealsSection({ deals = dailyDeals }) {
           </Swiper>
 
           <button
-            className={`h-auto dailyDeals-nav text-[50px] ${
+            className={`h-auto dailyDeals-nav text-[50px] justify-end ${
               isEnd ? "opacity-40 cursor-not-allowed" : "cursor-pointer"
             }`}
             aria-level="next"

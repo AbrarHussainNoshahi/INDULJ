@@ -50,9 +50,17 @@
 .deals-pagination .swiper-pagination-bullet-active {
   background: #ff4d4d;
 }
+
+.dailyDeals-nav{
+width: 80px;
+display: flex;
+align-items: center;
+}
+
 .dailyDeals_swiper {
   width: 100%;
   height: 100%;
+  padding: 15px 0;
   margin-left: auto;
   margin-right: auto;
 }

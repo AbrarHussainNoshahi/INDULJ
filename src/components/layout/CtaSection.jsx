@@ -7,7 +7,7 @@ export default function CtaSection() {
   const {Modal, setIsOpen} = useModal();
   
   return (
-    <section className=" bg-gray-50">
+    <section>
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8">
           <CtaCard
